@@ -1,0 +1,74 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "westeurope"
+        },
+        "networkInterfaceName": {
+            "value": "vm-timurbekirov-lab557"
+        },
+        "subnetName": {
+            "value": "default"
+        },
+        "virtualNetworkName": {
+            "value": "timurbekirov-labrg-vnet"
+        },
+        "addressPrefixes": {
+            "value": [
+                "172.17.0.0/16"
+            ]
+        },
+        "subnets": {
+            "value": [
+                {
+                    "name": "default",
+                    "properties": {
+                        "addressPrefix": "172.17.0.0/24"
+                    }
+                }
+            ]
+        },
+        "publicIpAddressName": {
+            "value": "vm-timurbekirov-lab-ip"
+        },
+        "publicIpAddressType": {
+            "value": "Dynamic"
+        },
+        "publicIpAddressSku": {
+            "value": "Basic"
+        },
+        "virtualMachineName": {
+            "value": "vm-timurbekirov-lab"
+        },
+        "virtualMachineComputerName": {
+            "value": "vm-timurbekirov"
+        },
+        "virtualMachineRG": {
+            "value": "timurbekirov-labrg"
+        },
+        "osDiskType": {
+            "value": "Standard_LRS"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_B2s"
+        },
+        "adminUsername": {
+            "value": "timur_bekirov"
+        },
+        "adminPassword": {
+            "reference": {
+                "keyVault": {
+                    "id": "/subscriptions/d141e78e-f7a9-4013-bb34-623f58247d8b/resourceGroups/timurbekirov-labrg/providers/Microsoft.KeyVault/vaults/timurbekirov-lab"
+                },
+                "secretName": "vmAdminPassword"
+    }
+        },
+        "patchMode": {
+            "value": "Manual"
+        },
+        "enableHotpatching": {
+            "value": false
+        }
+    }
+}
