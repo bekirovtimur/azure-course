@@ -12,7 +12,7 @@
             "value": "default"
         },
         "virtualNetworkName": {
-            "value": "timurbekirov-labrg-vnet"
+            "value": "timurbekirov-lab-rg-vnet"
         },
         "addressPrefixes": {
             "value": [
@@ -45,7 +45,7 @@
             "value": "vm-timurbekirov"
         },
         "virtualMachineRG": {
-            "value": "timurbekirov-labrg"
+            "value": "timurbekirov-lab-rg"
         },
         "osDiskType": {
             "value": "Standard_LRS"
@@ -59,7 +59,7 @@
         "adminPassword": {
             "reference": {
                 "keyVault": {
-                    "id": "/subscriptions/d141e78e-f7a9-4013-bb34-623f58247d8b/resourceGroups/timurbekirov-labrg/providers/Microsoft.KeyVault/vaults/timurbekirov-lab"
+                    "id": "/subscriptions/d141e78e-f7a9-4013-bb34-623f58247d8b/resourceGroups/timurbekirov-lab-rg/providers/Microsoft.KeyVault/vaults/timurbekirov-lab"
                 },
                 "secretName": "vmAdminPassword"
     }
