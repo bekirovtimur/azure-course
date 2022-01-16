@@ -87,9 +87,6 @@
                     }
                 ]
             },
-            "tags": {
-                "owner": "Timur_Bekirov"
-            }
         },
         {
             "name": "[parameters('virtualNetworkName')]",
@@ -102,9 +99,6 @@
                 },
                 "subnets": "[parameters('subnets')]"
             },
-            "tags": {
-                "owner": "Timur_Bekirov"
-            }
         },
         {
             "name": "[parameters('publicIpAddressName')]",
@@ -117,9 +111,6 @@
             "sku": {
                 "name": "[parameters('publicIpAddressSku')]"
             },
-            "tags": {
-                "owner": "Timur_Bekirov"
-            }
         },
         {
             "name": "[parameters('virtualMachineName')]",
@@ -173,9 +164,6 @@
                     }
                 }
             },
-            "tags": {
-                "owner": "Timur_Bekirov"
-            }
         }
     ],
     "outputs": {
