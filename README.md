@@ -1,6 +1,7 @@
 # azure-course
 
-Open Powershell as Administrator
-Install module - Install-Module Az
+#To work with Azure in Linux Powershell (pwsh)
+Install-Module Az
 Import-Module Az
-Your command - Connect-AzAccount should work now.
+Connect-AzAccount
+
