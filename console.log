@@ -1,0 +1,271 @@
+PS /home/bekirovtimur/Projects/azure-course/Script> ./task_01.ps1
+Enter the VM administrator password: *************
+
+ResourceGroupName : timurbekirov-lab-rg
+Location          : westeurope
+ProvisioningState : Succeeded
+Tags              : 
+ResourceId        : /subscriptions/d141e78e-f7a9-4013-bb34-623f58247d8b/resourceGroups/timurbekirov-lab-rg
+
+
+ResourceGroupName       : timurbekirov-lab-rg
+OnErrorDeployment       : 
+DeploymentName          : template
+CorrelationId           : 359f9065-0c62-4ab5-a75d-624d76df5bb1
+ProvisioningState       : Succeeded
+Timestamp               : 16.01.2022 23:24:12
+Mode                    : Incremental
+TemplateLink            : Microsoft.Azure.Management.ResourceManager.Models.TemplateLink
+TemplateLinkString      : 
+                          Uri            : https://raw.githubusercontent.com/bekirovtimur/azure-course/main/ARM/KeyVault/template.json
+                          ContentVersion : 1.0.0.0
+                          
+DeploymentDebugLogLevel : 
+Parameters              : {[keyVaultName, 
+                          Type        Value     
+                          ----------  ----------
+                          String      timurbekirov-lab
+                          ], [location, 
+                          Type        Value     
+                          ----------  ----------
+                          String      westeurope
+                          ], [tenantId, 
+                          Type        Value     
+                          ----------  ----------
+                          String      b41b72d0-4e9f-4c26-8a69-f949f367c91d
+                          ], [adUserId, 
+                          Type        Value     
+                          ----------  ----------
+                          String      1b26886e-2805-44db-9a71-213a3a5a2fd6
+                          ]…}
+Tags                    : 
+ParametersString        : 
+                          Name             Type                       Value     
+                          ===============  =========================  ==========
+                          keyVaultName     String                     "timurbekirov-lab"
+                          location         String                     "westeurope"
+                          tenantId         String                     "b41b72d0-4e9f-4c26-8a69-f949f367c91d"
+                          adUserId         String                     "1b26886e-2805-44db-9a71-213a3a5a2fd6"
+                          secretName       String                     "vmAdminPassword"
+                          secretValue      SecureString               null      
+                          
+Outputs                 : {[keyVaultId, 
+                          Type        Value     
+                          ----------  ----------
+                          String      /subscriptions/d141e78e-f7a9-4013-bb34-623f58247d8b/resourceGroups/timurbekirov-lab-rg/providers/Microsoft.KeyVault/vaults/timurbekirov-lab
+                          ]}
+OutputsString           : 
+                          Name             Type                       Value     
+                          ===============  =========================  ==========
+                          keyVaultId       String                     "/subscriptions/d141e78e-f7a9-4013-bb34-623f58247d8b/resourceGroups/timurbekirov-lab-rg/providers/Microsoft.KeyVault/vau
+                          lts/timurbekirov-lab"
+                          
+
+Deploying Resource Group and Key Vault completed
+
+ResourceGroupName       : timurbekirov-lab-rg
+OnErrorDeployment       : 
+DeploymentName          : template
+CorrelationId           : 2cc6360c-80f6-4e08-b197-73221fce963b
+ProvisioningState       : Succeeded
+Timestamp               : 16.01.2022 23:25:40
+Mode                    : Incremental
+TemplateLink            : Microsoft.Azure.Management.ResourceManager.Models.TemplateLink
+TemplateLinkString      : 
+                          Uri            : https://raw.githubusercontent.com/bekirovtimur/azure-course/main/ARM/VM/template.json
+                          ContentVersion : 1.0.0.0
+                          
+DeploymentDebugLogLevel : 
+Parameters              : {[location, 
+                          Type        Value     
+                          ----------  ----------
+                          String      westeurope
+                          ], [networkInterfaceName, 
+                          Type        Value     
+                          ----------  ----------
+                          String      vm-timurbekirov-lab557
+                          ], [subnetName, 
+                          Type        Value     
+                          ----------  ----------
+                          String      default   
+                          ], [virtualNetworkName, 
+                          Type        Value     
+                          ----------  ----------
+                          String      timurbekirov-lab-rg-vnet
+                          ]…}
+Tags                    : 
+ParametersString        : 
+                          Name                          Type                       Value     
+                          ============================  =========================  ==========
+                          location                      String                     "westeurope"
+                          networkInterfaceName          String                     "vm-timurbekirov-lab557"
+                          subnetName                    String                     "default" 
+                          virtualNetworkName            String                     "timurbekirov-lab-rg-vnet"
+                          addressPrefixes               Array                      ["172.17.0.0/16"]
+                          subnets                       Array                      [{"name":"default","properties":{"addressPrefix":"172.17.0.0/24"}}]
+                          publicIpAddressName           String                     "vm-timurbekirov-lab-ip"
+                          publicIpAddressType           String                     "Dynamic" 
+                          publicIpAddressSku            String                     "Basic"   
+                          virtualMachineName            String                     "vm-timurbekirov-lab"
+                          virtualMachineComputerName    String                     "vm-timurbekirov"
+                          virtualMachineRG              String                     "timurbekirov-lab-rg"
+                          osDiskType                    String                     "Standard_LRS"
+                          virtualMachineSize            String                     "Standard_B2s"
+                          adminUsername                 String                     "timur_bekirov"
+                          adminPassword                 SecureString               null      
+                          patchMode                     String                     "Manual"  
+                          enableHotpatching             Bool                       false     
+                          
+Outputs                 : {[adminUsername, 
+                          Type        Value     
+                          ----------  ----------
+                          String      timur_bekirov
+                          ]}
+OutputsString           : 
+                          Name             Type                       Value     
+                          ===============  =========================  ==========
+                          adminUsername    String                     "timur_bekirov"
+                          
+
+Deploying VM completed
+                                                                                                                        
+CloudBlobContainer      : Microsoft.Azure.Storage.Blob.CloudBlobContainer
+Permission              : Microsoft.Azure.Storage.Blob.BlobContainerPermissions
+AccessPolicy            : 
+PublicAccess            : Blob
+LastModified            : 16.01.2022 23:26:07 +00:00
+ContinuationToken       : 
+IsDeleted               : 
+VersionId               : 
+BlobContainerClient     : Azure.Storage.Blobs.BlobContainerClient
+BlobContainerProperties : Azure.Storage.Blobs.Models.BlobContainerProperties
+Context                 : Microsoft.WindowsAzure.Commands.Storage.AzureStorageContext
+Name                    : timurbekirov-lab-blobs
+
+                                                                                                                        
+ICloudBlob                         : Microsoft.Azure.Storage.Blob.CloudBlockBlob
+BlobType                           : BlockBlob
+Length                             : 147
+IsDeleted                          : False
+BlobClient                         : Azure.Storage.Blobs.BlobClient
+BlobBaseClient                     : Azure.Storage.Blobs.Specialized.BlockBlobClient
+BlobProperties                     : Azure.Storage.Blobs.Models.BlobProperties
+RemainingDaysBeforePermanentDelete : 
+ContentType                        : application/octet-stream
+LastModified                       : 16.01.2022 23:26:08 +00:00
+SnapshotTime                       : 
+ContinuationToken                  : 
+VersionId                          : 
+IsLatestVersion                    : 
+AccessTier                         : Cool
+TagCount                           : 0
+Tags                               : 
+Context                            : Microsoft.WindowsAzure.Commands.Storage.AzureStorageContext
+Name                               : install_iis.ps1
+
+Please wait. Deploying Custom Script Extension. This process may take up to 15 minutes. If you do not need to wait, just add -NoWait parameter in future deployments
+
+RequestId           : 
+IsSuccessStatusCode : True
+StatusCode          : OK
+ReasonPhrase        : OK
+
+Deploying IIS to the VM completed
+
+Id              : /subscriptions/d141e78e-f7a9-4013-bb34-623f58247d8b/resourceGroups/timurbekirov-lab-rg/providers/Microsoft.Resources/tags/default
+Name            : default
+Type            : Microsoft.Resources/tags
+Properties      : Microsoft.Azure.Commands.Tags.Model.PSTagsObject
+PropertiesTable : 
+                  Name   Value        
+                  =====  =============
+                  owner  Timur_Bekirov
+                  
+
+
+Id              : /subscriptions/d141e78e-f7a9-4013-bb34-623f58247d8b/resourceGroups/timurbekirov-lab-rg/providers/Microsoft.Compute/virtualMachines/vm-timurbekirov-lab/providers/Microsoft.R
+                  esources/tags/default
+Name            : default
+Type            : Microsoft.Resources/tags
+Properties      : Microsoft.Azure.Commands.Tags.Model.PSTagsObject
+PropertiesTable : 
+                  Name   Value        
+                  =====  =============
+                  owner  Timur_Bekirov
+                  
+
+
+Id              : /subscriptions/d141e78e-f7a9-4013-bb34-623f58247d8b/resourceGroups/timurbekirov-lab-rg/providers/Microsoft.Compute/virtualMachines/vm-timurbekirov-lab/extensions/timurbekir
+                  ov-lab-CSE/providers/Microsoft.Resources/tags/default
+Name            : default
+Type            : Microsoft.Resources/tags
+Properties      : Microsoft.Azure.Commands.Tags.Model.PSTagsObject
+PropertiesTable : 
+                  Name   Value        
+                  =====  =============
+                  owner  Timur_Bekirov
+                  
+
+
+Id              : /subscriptions/d141e78e-f7a9-4013-bb34-623f58247d8b/resourceGroups/timurbekirov-lab-rg/providers/Microsoft.KeyVault/vaults/timurbekirov-lab/providers/Microsoft.Resources/ta
+                  gs/default
+Name            : default
+Type            : Microsoft.Resources/tags
+Properties      : Microsoft.Azure.Commands.Tags.Model.PSTagsObject
+PropertiesTable : 
+                  Name   Value        
+                  =====  =============
+                  owner  Timur_Bekirov
+                  
+
+
+Id              : /subscriptions/d141e78e-f7a9-4013-bb34-623f58247d8b/resourceGroups/timurbekirov-lab-rg/providers/Microsoft.Network/networkInterfaces/vm-timurbekirov-lab557/providers/Micros
+                  oft.Resources/tags/default
+Name            : default
+Type            : Microsoft.Resources/tags
+Properties      : Microsoft.Azure.Commands.Tags.Model.PSTagsObject
+PropertiesTable : 
+                  Name   Value        
+                  =====  =============
+                  owner  Timur_Bekirov
+                  
+
+
+Id              : /subscriptions/d141e78e-f7a9-4013-bb34-623f58247d8b/resourceGroups/timurbekirov-lab-rg/providers/Microsoft.Network/publicIPAddresses/vm-timurbekirov-lab-ip/providers/Micros
+                  oft.Resources/tags/default
+Name            : default
+Type            : Microsoft.Resources/tags
+Properties      : Microsoft.Azure.Commands.Tags.Model.PSTagsObject
+PropertiesTable : 
+                  Name   Value        
+                  =====  =============
+                  owner  Timur_Bekirov
+                  
+
+
+Id              : /subscriptions/d141e78e-f7a9-4013-bb34-623f58247d8b/resourceGroups/timurbekirov-lab-rg/providers/Microsoft.Network/virtualNetworks/timurbekirov-lab-rg-vnet/providers/Micros
+                  oft.Resources/tags/default
+Name            : default
+Type            : Microsoft.Resources/tags
+Properties      : Microsoft.Azure.Commands.Tags.Model.PSTagsObject
+PropertiesTable : 
+                  Name   Value        
+                  =====  =============
+                  owner  Timur_Bekirov
+                  
+
+
+Id              : /subscriptions/d141e78e-f7a9-4013-bb34-623f58247d8b/resourceGroups/timurbekirov-lab-rg/providers/Microsoft.Storage/storageAccounts/satimurbekirov/providers/Microsoft.Resour
+                  ces/tags/default
+Name            : default
+Type            : Microsoft.Resources/tags
+Properties      : Microsoft.Azure.Commands.Tags.Model.PSTagsObject
+PropertiesTable : 
+                  Name   Value        
+                  =====  =============
+                  owner  Timur_Bekirov
+                  
+
+Tagging completed
+All done, open http://20.105.138.69 in your browser.
+
