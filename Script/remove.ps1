@@ -3,6 +3,7 @@ Remove-AzResourceGroup `
 
 Remove-AzKeyVault `
   -VaultName "timurbekirov-lab" `
+  -Location "westeurope" `
   -Force `
   -InRemovedState `
   -PassThru
