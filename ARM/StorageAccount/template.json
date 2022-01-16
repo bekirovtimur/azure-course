@@ -77,9 +77,6 @@
                 "tier": "Standard"
             },
             "properties": {
-                "protocolSettings": {
-                    "smb": {}
-                },
                 "cors": {
                     "corsRules": []
                 },
