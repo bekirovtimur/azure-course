@@ -1,9 +1,9 @@
-$projectName = Read-Host -Prompt "Enter a project name that is used for generating resource names"
-$location = Read-Host -Prompt "Enter the location (i.e. westeurope)"
-$upn = Read-Host -Prompt "Enter your user principal name (email address) used to sign in to Azure"
-$secretValue = Read-Host -Prompt "Enter the virtual machine administrator password" -AsSecureString
-
-$resourceGroupName = "${projectName}rg"
+$projectName = "timurbekirov-lab"
+$location = "westeurope"
+$upn = "Timur_Bekirov@epam.com"
+$secretValue = "$X7tA0hE#SLw3" -AsSecureString
+#####
+$resourceGroupName = "${projectName}-rg"
 $keyVaultName = $projectName
 $adUserId = (Get-AzADUser -UserPrincipalName $upn).Id
 $templateUri = "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/tutorials-use-key-vault/CreateKeyVault.json"
