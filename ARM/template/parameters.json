@@ -1,0 +1,18 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "fileUris": {
+            "value": "https://satimurbekirov.blob.core.windows.net/script/install_iis.ps1?sp=r&se=2022-01-04T21:02:30Z&sv=2020-08-04&sr=b&sig=iSJ7mrKhJV3fGzIDplu4lG9DYob3iX2YlPX9%2BlOO%2Fjo%3D"
+        },
+        "arguments": {
+            "value": null
+        },
+        "vmName": {
+            "value": "vm-timurbekirov-lab"
+        },
+        "location": {
+            "value": "westeurope"
+        }
+    }
+}
