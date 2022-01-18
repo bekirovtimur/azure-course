@@ -1,0 +1,64 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "RecoveryServicesVaultName": {
+            "defaultValue": "timurbekirov-lab-rsv",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.RecoveryServices/vaults",
+            "apiVersion": "2021-08-01",
+            "name": "[parameters('RecoveryServicesVaultName')]",
+            "location": "westeurope",
+            "sku": {
+                "name": "Standard"
+            },
+            "properties": {}
+        },
+        {
+            "type": "Microsoft.RecoveryServices/vaults/backupPolicies",
+            "apiVersion": "2021-08-01",
+            "name": "[concat(parameters('RecoveryServicesVaultName'), '/EpamWeeklyPolicy')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.RecoveryServices/vaults', parameters('RecoveryServicesVaultName'))]"
+            ],
+            "properties": {
+                "backupManagementType": "AzureIaasVM",
+                "instantRPDetails": {},
+                "schedulePolicy": {
+                    "schedulePolicyType": "SimpleSchedulePolicy",
+                    "scheduleRunFrequency": "Weekly",
+                    "scheduleRunDays": [
+                        "Saturday"
+                    ],
+                    "scheduleRunTimes": [
+                        "2022-02-01T00:00:00Z"
+                    ],
+                    "scheduleWeeklyFrequency": 0
+                },
+                "retentionPolicy": {
+                    "retentionPolicyType": "LongTermRetentionPolicy",
+                    "weeklySchedule": {
+                        "daysOfTheWeek": [
+                            "Saturday"
+                        ],
+                        "retentionTimes": [
+                            "2022-02-01T00:00:00Z"
+                        ],
+                        "retentionDuration": {
+                            "count": 4,
+                            "durationType": "Weeks"
+                        }
+                    }
+                },
+                "instantRpRetentionRangeInDays": 5,
+                "timeZone": "UTC",
+                "protectedItemsCount": 0
+            }
+        }
+    ]
+}

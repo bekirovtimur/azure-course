@@ -21,7 +21,7 @@ Set-AzRecoveryServicesBackupProperty `
 
 # Creating new policy
 $schPol = Get-AzRecoveryServicesBackupSchedulePolicyObject -WorkloadType "AzureVM"
-$UtcTime = Get-Date -Date "2022-01-01 00:00:00Z"
+$UtcTime = Get-Date -Date "2022-02-05 00:00:00Z"
 $UtcTime = $UtcTime.ToUniversalTime()
 $schPol.ScheduleRunTimes[0] = $UtcTime
 $schPol.ScheduleRunFrequency = "Weekly"
@@ -31,15 +31,17 @@ $schPol.ScheduleRunDays = "Sunday"
 $retPol = Get-AzRecoveryServicesBackupRetentionPolicyObject -WorkloadType "AzureVM"
 $retPol.IsDailyScheduleEnabled = $false
 $retPol.IsWeeklyScheduleEnabled = $true
+$retPol.IsMonthlyScheduleEnabled = $false
+$retPol.IsYearlyScheduleEnabled  = $false
 #
 New-AzRecoveryServicesBackupProtectionPolicy -Name "EpamWeeklyPolicy" -WorkloadType "AzureVM" -RetentionPolicy $retPol -SchedulePolicy $schPol -VaultId $recoveryServicesVault.ID
 ###
-
+Get-AzRecoveryServicesVault -Name $recoveryServicesVaultName -ResourceGroupName $resourceGroupName | Set-AzRecoveryServicesVaultContext
 #
 # Setting weekly Saturday policy to VM
 $policy = Get-AzRecoveryServicesBackupProtectionPolicy -Name "EpamWeeklyPolicy"
-$schPol.ScheduleRunDays = "Saturday"
-Set-AzRecoveryServicesBackupProtectionPolicy -Policy $policy -RetentionPolicy $retPol -SchedulePolicy $schPol
+#$schPol.ScheduleRunDays = "Saturday"
+#Set-AzRecoveryServicesBackupProtectionPolicy -Policy $policy -RetentionPolicy $retPol -SchedulePolicy $schPol
 #Enable-AzRecoveryServicesBackupProtection `
 #    -ResourceGroupName $resourceGroupName `
 #    -Name $vmName `
